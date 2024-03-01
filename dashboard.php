@@ -141,11 +141,9 @@ elseif ($_GET['page'] == 'petugas') {
     $NamaLengkap = $_POST['NamaLengkap'];
     $Alamat = $_POST['Alamat'];
     $fung->updatepetugas($UserID, $Username, $Password, $Email, $NamaLengkap, $Alamat);
+}elseif ($_GET['page'] == 'resetpassword') {
 
-
-
-    
-
+    $fung->resetPassword($_POST['UserID']);
 }
 
 

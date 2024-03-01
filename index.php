@@ -16,7 +16,20 @@ $cek =new Auth;
     } elseif($_GET['page'] == 'postlogin'){
         $cek->login($_POST['email'],$_POST['password']);
     }elseif($_GET['page'] == 'postregister'){
-        $cek->register($_POST['UserID']=null,$_POST['Username'],password_hash($_POST['Password'],PASSWORD_DEFAULT),$_POST['Email'],$_POST['NamaLengkap'],$_POST['Alamat'],$_POST['Role']);
+        if($_POST['Username'] == null){
+            echo "<script>";
+        echo "alert('harus login dulu');";
+        echo "window.location.href = 'index.php?page=login';";
+        echo "</script>";
+        } else {
+
+            $data['Username'] = $_POST['Username']; 
+            $data['Password'] = $_POST['Password']; 
+            $data['NamaLengkap'] = $_POST['NamaLengkap']; 
+            $data['Email'] = $_POST['Email']; 
+            $data['Alamat'] = $_POST['Alamat']; 
+            $cek->register($data);
+        }
     }
     elseif ($_GET['page'] == 'logout'){
         $cek->logout();

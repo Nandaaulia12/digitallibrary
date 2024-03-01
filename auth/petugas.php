@@ -38,7 +38,8 @@ foreach ($fung->datapetugas() as $d) { ?>
                     <td> <?= $d['Username'] ?> </td>
                     <td> <?= $d['Role'] ?> </td>
 
-                    <td>
+                    <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reset">Reset</button>
+
                         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit<?= $d['UserID'] ?>"><i class="fa fa-edit fa-sm text-white"></i></button>
                         <a href="index.php?page=hapuspetugas&UserID=<?= $d['UserID'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah yakin menghapus data <?= $d['NamaLengkap'] ?>y')"><i class="fa fa-trash"></i> </a>
                     </td>
@@ -151,4 +152,40 @@ foreach ($fung->datapetugas() as $k) { ?>
 <?php  }
 ?>
 
+<!-- /.modal -->
+<!-- modal reset -->
+<?php
+foreach ($fung->datapetugas() as $k) { ?>
+    <div class="modal fade" id="reset">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Reset Password</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <form action="dashboard.php?page=resetpassword" method="POST" id="logForm">
+                    <div class="card-body">
+                        <input type="hidden" name="UserID" value="<?= $k['UserID']; ?>">
+                        <div class="form-group">
+                            <p>
+                                Apa anda yakin mengatur ulang kata sandi?
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Reset Password</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+<?php  }
+?>
 <!-- /.modal -->

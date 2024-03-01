@@ -1,4 +1,8 @@
-<div class="col-md-3 mb-5 mt-5">
+<body style='background-image: url("https://i.pinimg.com/564x/0d/6c/5a/0d6c5aae415383c3547d47d7ab5faedf.jpg");  background-color: #cccccc; 
+  background-position: bottom; 
+  background-repeat: no-repeat; 
+  background-size: cover;'>
+<div class="col-md-3 mb-5 mt-5" >
       <div class="card">
           <div class="card-header">
             <img src='A.png' width=250>
@@ -20,4 +24,6 @@
           </div>
           </form>
         </div>
-  </div>
+</div>
+</body>
+

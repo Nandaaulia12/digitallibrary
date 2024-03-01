@@ -1,6 +1,4 @@
-<body class="login-page" style="height: auto;">
-
-    <div class="container">
+<div class="container">
   <div class="row mt-5 mb-5 justify-content-center">
   <div class="col-md-6">
       <div class="card">
@@ -45,4 +43,4 @@
         </div>
   </div>
   </div>
-</div><!-- jQuery -->
+</div>

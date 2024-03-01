@@ -406,6 +406,30 @@ class Fungsi {
             echo '</script>';
         }
     }
+    public function resetPassword($UserID)
+    {
+        $cek = new Koneksi;
+        $hashedPassword = password_hash('12345', PASSWORD_BCRYPT);
+        $sql = "UPDATE user SET Password='$hashedPassword' WHERE UserID = '$UserID'";
+        //  var_dump($UserID);
+        $query = mysqli_query($cek->koneksi(), $sql);
+
+        if ($query) {
+            echo "<script>";
+            // echo 'alert("Ulasan berhasil"); ' ;
+            // echo 'window.location.href = "dashboard.php?page=databuku";';
+            echo '</script>';
+            echo '<script>window.location="dashboard.php?page=petugas"</script>';
+        } else {
+            echo "<script>";
+            // echo 'alert("Ulasan berhasil"); ' ;
+            // echo 'window.location.href = "dashboard.php?page=databuku";';
+            echo '</script>';
+            echo '<script>window.location="dashboard.php?page=petugas"</script>';
+        }
+    }
+
+
 
     //untuk tambah petugas fungsinya registerPetugas di auth, kenapa di auth?
 

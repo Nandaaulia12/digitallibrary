@@ -31,10 +31,8 @@
                     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambahkategori">
                         <i class="fas fa-plus fa-sm text-white-50"></i>Tambah Kategori</button>
                 </div>
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered" id="myTable">
-                    
-
+                <div class="table-responsive ">
+                    <table class="table table-striped " id="myTable">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -51,9 +49,7 @@
                                     <td><?= $d['NamaKategori']; ?></td>
                                     <td>
                                         <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit<?= $d['KategoriID']?>">Edit</button>
-
                                         <a href="dashboard.php?page=hapusKategori&KategoriID=<?= $d['KategoriID']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah yakin menghapus Kategori <?= $d['NamaKategori'] ?>?')">Hapus</a>
-
                                     </td>
                                 </tr>
                             <?php } ?>

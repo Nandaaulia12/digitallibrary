@@ -87,7 +87,7 @@
               </div>
               <div class="form-group">
               <?php 
-                        foreach($fungsi->viewKategori() as $d){ ?>
+                        foreach($fung->viewKategori() as $d){ ?>
                             <div><input type="checkbox" name="kategori[<?= $d['KategoriID'] ?>]" value="<?= $d['KategoriID'] ?>"> <?= $d['NamaKategori'] ?></div>
                       <?php  }
                     ?>
@@ -98,7 +98,7 @@
               <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
             </form>
-          </div>
+          
           <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->

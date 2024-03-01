@@ -13,11 +13,12 @@ class Auth
         $NamaLengkap = $data['NamaLengkap'];
         $Alamat = $data['Alamat'];
         $sql = "INSERT INTO user VALUES (NULL, '$Username','$Password','$Email','$NamaLengkap','$Alamat','user')";
+     
         $query = mysqli_query($cek->koneksi(), $sql);
         if ($query) {
             echo "<script>";
             echo 'alert("Berhasil Daftar Akun ");';
-            echo 'window.location.href = "index.php?page=login";';
+           echo 'window.location.href = "index.php?page=login";';
             echo '</script>';
         } else {
             echo "<script>";
@@ -25,6 +26,7 @@ class Auth
             echo 'window.location.href = "index.php?page=register";';
             echo '</script>';
         }
+
     }
     public function registerPetugas($data)
     {
